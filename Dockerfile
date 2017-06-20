@@ -22,4 +22,3 @@ EXPOSE 3389 22
 #WORKDIR /home/alpine
 #USER alpine
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
