@@ -2,7 +2,7 @@ FROM alpine:latest
 MAINTAINER Charlie Wang <272876047@qq.com>
 
 RUN apk add --update openssh util-linux dbus ttf-freefont xauth xf86-input-keyboard sudo \
-    && openssh-server python-pip libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git\
+    openssh-server python-pip libnet1 libnet1-dev libpcap0.8 libpcap0.8-dev git\
     && rm  -rf /tmp/* /var/cache/apk/*
 
 RUN echo "root:password"|chpasswd
