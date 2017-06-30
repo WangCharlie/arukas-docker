@@ -1,16 +1,16 @@
 FROM alpine:edge
 MAINTAINER Charlie Wang <272876047@qq.com>
 
-RUN apk add --update build-base openssh util-linux dbus ttf-freefont xauth xf86-input-keyboard sudo \
+RUN apk add --update build-base openssh sudo \
     openssh-server libev libnet-dev libpcap-dev libressl2.5-libcrypto libsodium musl pcre udns git\
     && rm  -rf /tmp/* /var/cache/apk/*
     
-RUN apk add --no-cache python3 && \
-    python3 -m ensurepip && \
-    rm -r /usr/lib/python*/ensurepip && \
-    pip3 install --upgrade pip setuptools && \
-    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    rm -r /root/.cache
+#RUN apk add --no-cache python3 && \
+#    python3 -m ensurepip && \
+#    rm -r /usr/lib/python*/ensurepip && \
+#    pip3 install --upgrade pip setuptools && \
+#    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+#    rm -r /root/.cache
 
 RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
