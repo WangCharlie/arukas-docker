@@ -1,7 +1,7 @@
 FROM alpine:edge
 MAINTAINER Charlie Wang <272876047@qq.com>
 
-RUN apk add --update openssh util-linux dbus ttf-freefont xauth xf86-input-keyboard sudo \
+RUN apk add --update build-base openssh util-linux dbus ttf-freefont xauth xf86-input-keyboard sudo \
     openssh-server libev libressl2.5-libcrypto libsodium musl pcre udns git\
     && rm  -rf /tmp/* /var/cache/apk/*
     
