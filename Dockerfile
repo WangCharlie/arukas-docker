@@ -16,7 +16,7 @@ RUN echo "root:password"|chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
 	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
     
-RUN pip install shadowsocks
+RUN git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git ssr
 RUN git clone https://github.com/snooda/net-speeder.git net-speeder
 WORKDIR net-speeder
 RUN sh build.sh
