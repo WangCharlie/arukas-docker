@@ -28,4 +28,3 @@ RUN chmod +x /usr/local/bin/net_speeder
 
 # Configure container to run as an executable
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-EXPOSE 22
