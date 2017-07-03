@@ -22,10 +22,10 @@ WORKDIR net-speeder
 RUN sh build.sh
 
 RUN mv net_speeder /usr/sbin
-ADD entrypoint.sh /usr/sbin
+COPY entrypoint.sh /usr/sbin
 RUN chmod +x /usr/sbin/entrypoint.sh
 RUN chmod +x /usr/sbin/net_speeder
 
 
 # Configure container to run as an executable
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/entrypoint.sh"]
